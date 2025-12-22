@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume</title>
+  <style>
+    :root {
+      --bg: #050b12;
+      --card: #0b1521;
+      --neon: #00eaff;
+      --text: #d9e4f2;
+      --text-light: #8eaac7;
+      --btn-bg: #00eaff;
+      --btn-hover: #00a8c6;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: var(--neon);
+    }
+
+    .pdf-container {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      border: 2px solid var(--neon);
+      background-color: var(--card);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      background-color: var(--card);
+    }
+
+   
+    .download-btn {
+  background-color: var(--neon);
+  color: #000;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  
+  
+  margin-top: 2rem;
+}
+
+.download-btn:hover {
+  background-color: transparent;
+  color: var(--neon);
+  border-color: var(--neon);
+}
+
+  </style>
+    <link rel="icon" href="favicon.png" type="image/png">
+ 
+</head>
+<body>
+
+  <h1>My Resume</h1>
+
+  <!-- PDF Viewer -->
+  <div class="pdf-container">
+    <iframe src="karabo.pdf" width="100%" height="100%" style="border:none;">
+      This browser does not support PDFs. Please download the PDF to view it: 
+      <a href="karabo.pdf">Download PDF</a>.
+    </iframe>
+  </div>
+
+  <!-- Download Button -->
+  <a href="karabo.pdf" class="download-btn" download>Download My CV</a>
+
+</body>
+</html>

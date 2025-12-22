@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Karabo Dolamo - Cybersecurity Portfolio</title>
+  <style>
+    /* Loader styles */
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .wrapper {
+      width: 200px;
+      height: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #00ffff;
+      left: 15%;
+      transform-origin: 50%;
+      animation: circle7124 .5s alternate infinite ease;
+    }
+
+    @keyframes circle7124 {
+      0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+      }
+      40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+      }
+      100% {
+        top: 0%;
+      }
+    }
+
+    .circle:nth-child(2) {
+      left: 45%;
+      animation-delay: .2s;
+    }
+
+    .circle:nth-child(3) {
+      left: auto;
+      right: 15%;
+      animation-delay: .3s;
+    }
+
+    .shadow {
+      width: 20px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.9);
+      position: absolute;
+      top: 62px;
+      transform-origin: 50%;
+      z-index: -1;
+      left: 15%;
+      filter: blur(1px);
+      animation: shadow046 .5s alternate infinite ease;
+    }
+
+    @keyframes shadow046 {
+      0% {
+        transform: scaleX(1.5);
+      }
+      40% {
+        transform: scaleX(1);
+        opacity: .7;
+      }
+      100% {
+        transform: scaleX(.2);
+        opacity: .4;
+      }
+    }
+
+    .shadow:nth-child(4) {
+      left: 45%;
+      animation-delay: .2s;
+    }
+
+    .shadow:nth-child(5) {
+      left: auto;
+      right: 15%;
+      animation-delay: .3s;
+    }
+
+    .loader-wrapper.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    /* Main content fade-in */
+    .main-content {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      display: none;
+    }
+
+    .main-content.show {
+      opacity: 1;
+      display: block;
+    }
+  </style>
+   <link rel="icon" href="favicon.png" type="image/png">
+
+</head>
+<body>
+
+
+
+
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <div class="wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Main content -->
+  <div class="main-content">
+
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="#home" class="logo">
+  <img src="logo.jpg" alt="KB Logo" class="logo-img">
+</a>
+
+
+        <div class="menu-icon" id="menu-icon">
+  <i class='bx bx-menu'></i>
+</div>
+
+
+      <nav class="navbar">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+        <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
+      </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home">
+      <canvas id="particle-canvas" class="home-canvas"></canvas>
+      <div class="gradient-overlay"></div>
+      <div class="home-content-wrapper">
+        <div class="home-img-wrapper">
+          <div class="halo"></div>
+          <div class="home-img">
+            <img src="Profile.PNG" alt="Profile Image">
+          </div>
+        </div>
+        <div class="home-content">
+          <h4 class="hello-text">Hello, I'm</h4>
+          <h1 class="monica-title">Karabo Dolamo</h1>
+          <h3>And I'm an <span class="multiple-text"></span></h3>
+          <p class="bio-text">
+            Aspiring IT professional with a strong foundation in Technical Support, Networking, and Cybersecurity. Passionate about protecting systems and ensuring secure digital environments using industry-standard tools like Kali Linux and Zero Trust solutions.
+          </p>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/karabo-dolamo" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/karabo-dolamo" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/karabodolamo target="_blank"><i class='bx bxl-instagram'></i></a>
+
+
+          </div>
+          <a href="karabo.pdf" class="btn" target="_blank">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2 class="heading">Know Who <span>I Am</span></h2>
+        <h3>IT & Cybersecurity Engineer</h3>
+        <p>I’m an aspiring IT and Cybersecurity professional with experience in troubleshooting, network support, and implementing secure configurations. I take pride in identifying vulnerabilities and strengthening systems against cyber threats.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+      <div class="about-img">
+        <img src="about.jpg" alt="Cybersecurity Image">
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+      <h2 class="heading">My <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class='bx bx-shield-quarter'></i>
+          <h3>Cybersecurity</h3>
+          <p>Implementation and maintenance of security protocols to protect systems against data breaches and unauthorized access.</p>
+          <a href="https://www.dotcomsecurity.co.za/" class="btn" target="_blank">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-network-chart'></i>
+          <h3>Computer Networking</h3>
+          <p>Designing and maintaining secure and efficient home and business networks for smooth connectivity and data flow.</p>
+         <a href="https://www.netacad.com/" class="btn" target="_blank">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-wrench'></i>
+          <h3>Technical Support</h3>
+          <p>Diagnosing and troubleshooting hardware and software issues, ensuring reliable IT support and customer satisfaction.</p>
+          <a href="https://www.coursera.org/learn/technical-support-fundamentals" class="btn" target="_blank">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="heading">Professional <span>Skillset</span></h2>
+        <div class="skills-grid">
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Cybersecurity Incident Response</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Firewalls</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Cybersecurity Risk Management</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Cloud Security Knowledge</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Network Security</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Cyber Security</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Digital Investigation</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Endpoint Security</h3></div></div></div>
+          <div class="skill-box"><div class="skill-content"><i class="bx bx-check-circle skill-icon"></i><div class="skill-text"><h3>Security Information and Event Management (SIEM)</h3></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    <section id="projects" class="projects">
+  <div class="container">
+    <h2 class="heading">My <span>Projects</span></h2>
+    <div class="projects-grid">
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">Network Security Setup</h3>
+            <p class="card-content">Configured a secure home network using firewall rules and VLAN segmentation.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">Cybersecurity Lab</h3>
+            <p class="card-content">Built a virtual lab environment for testing vulnerabilities and practicing ethical hacking.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">SIEM Implementation</h3>
+            <p class="card-content">Implemented SIEM tools for real-time monitoring and alerting of security events.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">Endpoint Security Deployment</h3>
+            <p class="card-content">Deployed endpoint protection software across multiple devices ensuring malware-free operations.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">Firewall Optimization</h3>
+            <p class="card-content">Optimized firewall rules and configurations to enhance network security and reduce latency.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent">
+        <div class="card">
+          <div class="content-box">
+            <h3 class="card-title">Vulnerability Assessment</h3>
+            <p class="card-content">Conducted vulnerability scans and penetration tests to identify and mitigate security risks.</p>
+            <span class="see-more">View Project</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+    
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form class="contact-form">
+          <div class="form-grid">
+            <div class="form-group"><input type="text" name="name" placeholder="Full Name *" /></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Email Address *" /></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number" /></div>
+            <div class="form-group"><input type="text" name="subject" placeholder="Subject" /></div>
+          </div>
+          <div class="form-group"><textarea name="message" rows="8" placeholder="Your Message *"></textarea></div>
+          <div class="form-btn"><button type="submit">Send Message</button></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="social">
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+      </div>
+      <p class="copyright">© 2025 Karabo Dolamo - All Rights Reserved</p>
+    </footer>
+
+  </div> <!-- end main-content -->
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script>
+    // Loader functionality
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader-wrapper');
+      const content = document.querySelector('.main-content');
+      const loaderDuration = 2000; // 3 seconds
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        content.style.display = 'block';
+        content.classList.add('show');
+      }, loaderDuration);
+    });
+
+  
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.getElementById('navbar');
+
+menuIcon.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
+
+
+
+
+
+
+
+
+
+    // Intersection Observer for navbar active links
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a");
+    const options = { threshold: 0.6 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === entry.target.id) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }, options);
+    sections.forEach(section => observer.observe(section));
+
+    // Particle canvas
+    const canvas = document.getElementById("particle-canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const particles = [];
+    const particleCount = 100;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speedX: Math.random() * 0.5 - 0.25,
+        speedY: Math.random() * 0.5 - 0.25,
+      });
+    }
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.fillStyle = "rgba(0,255,255,0.5)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Typed.js animation
+    const typed = new Typed(".multiple-text", {
+      strings: ["CyberSecurity Engineer", "Security Engineer", "SOC Analyst"],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+    });
+  </script>
+
+</body>
+</html> 
