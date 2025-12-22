@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -23,59 +23,111 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      margin: 0;
+      position: relative;
     }
 
     h1 {
       margin-bottom: 20px;
       color: var(--neon);
+      position: relative;
+      z-index: 1;
     }
 
     .pdf-container {
-      width: 100%;
-      max-width: 800px;
-      height: 600px;
+      width: 700%;
+      max-width: 900px;
+      height: 800px;
       border: 2px solid var(--neon);
       background-color: var(--card);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
     }
 
     iframe {
       background-color: var(--card);
     }
 
-   
     .download-btn {
-  background-color: var(--neon);
-  color: #000;
-  font-weight: 500;
-  padding: 0.6rem 1rem;
-  font-size: 1.125rem;
-  border-radius: 9999px;
-  border: 2px solid transparent;
-  
-  
-  margin-top: 2rem;
-}
+      background-color: var(--neon);
+      color: #000;
+      font-weight: 500;
+      padding: 0.6rem 1rem;
+      font-size: 1.125rem;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 1;
+      text-decoration: none;
+    }
 
-.download-btn:hover {
-  background-color: transparent;
-  color: var(--neon);
-  border-color: var(--neon);
-}
+    .download-btn:hover {
+      background-color: transparent;
+      color: var(--neon);
+      border-color: var(--neon);
+    }
 
+    /* Canvas styling */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* behind all content */
+    }
+
+    /* Back button styling */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--neon);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      z-index: 2;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      color: var(--neon);
+      border-color: var(--neon);
+    }
+
+    .back-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #000;
+    }
   </style>
-    <link rel="icon" href="favicon.png" type="image/png">
- 
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn" title="Go back home">
+    <svg viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </a>
 
   <h1>My Resume</h1>
 
   <!-- PDF Viewer -->
   <div class="pdf-container">
     <iframe src="karabo.pdf" width="100%" height="100%" style="border:none;">
-      This browser does not support PDFs. Please download the PDF to view it: 
+      This browser does not support PDFs. Please download the PDF to view it:
       <a href="karabo.pdf">Download PDF</a>.
     </iframe>
   </div>
@@ -83,5 +135,51 @@
   <!-- Download Button -->
   <a href="karabo.pdf" class="download-btn" download>Download My CV</a>
 
+  <!-- Add extra content to scroll -->
+  <div style="height: 1000px;"></div>
+
+  <!-- Particle Animation Script -->
+  <script>
+    const canvas = document.getElementById("particle-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const particles = [];
+    const particleCount = 100;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speedX: Math.random() * 0.5 - 0.25,
+        speedY: Math.random() * 0.5 - 0.25,
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.fillStyle = "rgba(0,255,255,0.5)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+  </script>
 </body>
 </html>

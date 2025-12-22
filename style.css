@@ -271,9 +271,6 @@ html {
   transition: 0.3s ease;
 }
 
-.home-img img:hover {
-  transform: scale(1.05);
-}
 
 /* ===========================
    TEXT AREA
@@ -461,13 +458,6 @@ h3 {
 
 
 
-
-
-
-
-
-
-
 /* ===========================
    ABOUT (Responsive)
 =========================== */
@@ -517,7 +507,7 @@ h3 {
 }
 
 .about-img img:hover {
-  transform: scale(1.08);
+  transform: scale(1.17);
   box-shadow: 0 0 40px var(--neon);
 }
 
@@ -620,9 +610,6 @@ h3 {
     0 0 40px var(--neon);
 }
 
-
-
-
 /* ===========================
    SERVICES SECTION
 =========================== */
@@ -635,40 +622,75 @@ h3 {
 .services .heading {
   font-size: 2.5rem;
   font-weight: 700;
-  text-shadow: 0 0 5px #00eaff;
 }
 
 .services .heading span {
   color: var(--neon);
+  text-shadow: 0 0 5px #00eaff;
 }
 
-/* SERVICES GRID */
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 60px;
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* SERVICE BOX */
 .services-box {
-  background: var(--card);
-  padding: 40px 20px;
-  min-height: 360px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  position: relative;
+  width: 300px;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  overflow: hidden;
   text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  color: #fff;
+  z-index: 0;
+  background: transparent; 
 }
 
+/* Content stays above animation */
+.services-box * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Rotating gradient border */
+.services-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 3s linear infinite;
+  z-index: 0;
+}
+
+/* Inner background to cover center */
+.services-box::after {
+  content: "";
+  position: absolute;
+  inset: 6px; /* space from the edges */
+  background: #07182E;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+/* Hover gradient effect */
+.services-box:hover::before {
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), #03002e);
+}
+
+/* Icon styling */
 .services-box i {
   font-size: 3rem;
-  color: var(--neon);
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  color: #00b7ff;
   transition: transform 0.3s ease;
 }
 
+/* Headings and text */
 .services-box h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
@@ -681,18 +703,17 @@ h3 {
   line-height: 1.6;
 }
 
-/* HOVER EFFECT */
+/* Hover effects */
 .services-box:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  border-color: rgba(0, 255, 255, 0.4);
 }
 
 .services-box:hover i {
   transform: scale(1.1);
 }
 
-/* BUTTON */
+/* Buttons */
 .services-box .btn {
   display: inline-block;
   background-color: var(--neon);
@@ -709,6 +730,22 @@ h3 {
   color: var(--neon);
   border-color: var(--neon);
 }
+
+/* Rotation animation */
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(370deg);
+  }
+}
+
+
+
+
+
+
 
 /* ===========================
    RESPONSIVE GRID
@@ -744,25 +781,6 @@ h3 {
 
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
    SKILLS
@@ -780,6 +798,7 @@ h3 {
 
 .skills h2 span {
   color: var(--neon);
+  text-shadow: 0 0 5px #00eaff;
 }
 
 
@@ -882,28 +901,6 @@ h3 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
    PROJECTS
 =========================== */
@@ -966,7 +963,7 @@ h3 {
 
 .card-title:hover {
   transform: translate3d(0, 0, 60px);
-  color: var(--neon);
+  
 }
 
 .card-content {
@@ -1003,36 +1000,6 @@ h3 {
   box-shadow: 0 0 15px var(--neon);
 }
 
-/* Optional date-box for additional 3D layers */
-.date-box {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  height: 60px;
-  width: 60px;
-  background: var(--dark-navy);
-  border: 1px solid var(--neon);
-  padding: 10px;
-  transform: translate3d(0, 0, 80px);
-  box-shadow: 0 0 15px var(--neon);
-}
-
-.date-box span {
-  display: block;
-  text-align: center;
-}
-
-.date-box .month {
-  color: var(--neon);
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.date-box .date {
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--neon);
-}
 
 
 
@@ -1092,6 +1059,148 @@ textarea {
     border-color: var(--neon);
 }
 
+
+
+
+/* Social Icon List */
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -130px;
+}
+
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgba(0,0,0,0.12);
+  color: white;
+}
+
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Social Colors */
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #1877f2;
+}
+
+/* Footer */
+footer.footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer.footer .social a {
+  margin: 0 8px;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+footer.footer .social a:hover {
+  color: #1877f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===========================
    FOOTER
 =========================== */
@@ -1101,29 +1210,10 @@ textarea {
   border-top: 1px solid rgba(0, 255, 255, 0.2);
 }
 
-.footer .social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--card);
-  color: var(--neon);
-  font-size: 1.6rem;
-  margin: 0 12px;
-  transition: 0.3s;
-  text-decoration: none;
-}
 
-.footer .social a:hover {
-  color: #fff;
-  background: var(--neon);
-  transform: scale(1.1);
-}
 
 footer p {
-  margin-top: 15px;
+  margin-top: 50px;
   color: var(--text-light);
 }
 
