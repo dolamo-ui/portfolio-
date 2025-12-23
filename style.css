@@ -1005,6 +1005,183 @@ h3 {
 
 
 
+/* Section */
+.tools-section {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+.section-title span {
+  color: var(--neon);
+  text-shadow: 0 0 5px #00eaff;
+}
+
+/* Grid */
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.tool-card {
+  background: var(--card);
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  border: 1px solid rgba(0, 234, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.tool-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Card Title */
+.tool-card h3 {
+  color: var(--neon);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Tool List */
+.tool-card ul {
+  list-style: none;
+}
+
+.tool-card ul li {
+  color: var(--text-light);
+  padding: 6px 0;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 18px;
+}
+
+.tool-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--neon);
+  font-size: 0.8rem;
+}
+
+
+
+
+
+/* Section */
+.cert-section {
+  padding: 90px 10%;
+  background: var(--dark-navy);
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+.section-title span {
+  color: var(--neon);
+  text-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
+}
+
+/* Container for Glass Cards */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Glass Card */
+.container .glass {
+  position: relative;
+  width: 300px;        /* fixed width */
+  height: 400px;       /* fixed height */
+  background: linear-gradient(#fff2, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  transition: 0.5s;
+  transform: rotate(calc(var(--r) * 1deg));
+  overflow: hidden;
+}
+.container:hover .glass {
+  transform: rotate(0deg);
+}
+
+/* Card Title Overlay */
+.container .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+}
+
+/* Certification List */
+.glass ul {
+  margin-top: 50px;
+  width: 100%;
+  list-style: none;
+}
+.glass ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+.glass ul li::before {
+  content: "▸";
+  color: var(--neon);
+  text-shadow: 0 0 6px rgba(0,234,255,0.6);
+}
+
+/* Hover Glow */
+.glass:hover {
+  box-shadow: 0 0 35px rgba(0, 234, 255, 0.35), 0 15px 25px rgba(0,0,0,0.25);
+  transform: translateY(-10px) rotate(0deg);
+}
+
+
+
+
+
 
 /* ===========================
    CONTACT

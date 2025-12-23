@@ -175,6 +175,8 @@
         <a href="#services"><i class="fas fa-cogs"></i> Services</a>
         <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a>
         <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="#tools-sections"><i class="fas fa-tools"></i> Tech&Tools</a>
+        <a href="#Certs+"><i class="fas fa-certificate"></i> Certs+</a>
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
         <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
       </nav>
@@ -271,7 +273,7 @@
     
     
     
-    <section id="projects" class="projects">
+   <section id="projects" class="projects">
   <div class="container">
     <h2 class="heading">My <span>Projects</span></h2>
     <div class="projects-grid">
@@ -341,7 +343,146 @@
 </section>
 
     
-    
+  
+
+
+<section id="tools-sections" class="tools-sections">
+  <h2 class="section-title">Tools & <span>Technologies</span></h2>
+
+  <div class="tools-container" id="toolsContainer">
+    <!-- Cards injected by JavaScript -->
+  </div>
+</section>
+
+<script>
+  const toolsData = [
+    {
+      category: "SIEM",
+      tools: ["Splunk", "Wazuh", "Microsoft Sentinel"]
+    },
+    {
+      category: "Networking",
+      tools: ["Cisco", "TCP/IP", "Zscaler"]
+    },
+    {
+      category: "Security",
+      tools: [
+        "Symantec Email Security.cloud",
+        "Symantec Endpoint Security Complete",
+        "SentinelOne"
+      ]
+    },
+    {
+      category: "Operating Systems",
+      tools: ["Linux (Kali)", "Windows (10/11)", "Windows Server"]
+    },
+    {
+      category: "Cloud & Identity",
+      tools: ["AWS Basics", "Microsoft Security, Compliance, and Identity tools"]
+    },
+    {
+      category: "Managed Security & MDR",
+      tools: ["Arctic Wolf Managed Detection and Response", "Arctic Wolf Managed Risk"]
+    }
+  ];
+
+  const container = document.getElementById("toolsContainer");
+
+  toolsData.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "tool-card";
+
+    const title = document.createElement("h3");
+    title.textContent = item.category;
+
+    const list = document.createElement("ul");
+
+    item.tools.forEach(tool => {
+      const li = document.createElement("li");
+      li.textContent = tool;
+      list.appendChild(li);
+    });
+
+    card.appendChild(title);
+    card.appendChild(list);
+    container.appendChild(card);
+  });
+</script>
+
+
+
+
+  <!-- Licenses & Certifications Section -->
+  <section class="cert-section">
+    <h2 class="section-title">Licenses & <span>Certifications</span></h2>
+
+    <div class="container" id="certContainer">
+      <!-- JavaScript will populate certifications here -->
+    </div>
+  </section>
+
+  <script>
+    const certifications = [
+      {
+        level: "Core SOC Certifications",
+        priority: 1,
+        items: [
+          "Microsoft Certified: Security Operations Analyst Associate",
+          "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+          "Certified Network Security Practitioner (CNSP)",
+          "Cisco Certified Network Associate (CCNA)",
+          "Zscaler Zero Trust Certified Associate"
+        ]
+      },
+      {
+        level: "Security Platforms & MDR",
+        priority: 2,
+        items: [
+          "Managed Detection and Response 101 – Arctic Wolf",
+          "Managed Risk 101 – Arctic Wolf",
+          "SentinelOne Sales Engineer Professional",
+          "Pentera Security Validation Associate",
+          "Symantec Email Security.cloud – Administration",
+          "Symantec Endpoint Security Complete – Advanced Content",
+          "LinkShadow Technical Specialist"
+        ]
+      },
+      {
+        level: "Additional Certifications",
+        priority: 3,
+        items: [
+          "LinkShadow Sales Expert"
+        ]
+      }
+    ];
+
+    certifications.sort((a, b) => a.priority - b.priority);
+    const certContainer = document.getElementById("certContainer");
+
+    certifications.forEach((section, index) => {
+      const card = document.createElement("div");
+      card.className = "glass";
+      card.setAttribute("data-text", section.level);
+      card.style.setProperty("--r", `${(index - 1) * 30}`); // stagger rotation
+
+      const ul = document.createElement("ul");
+      section.items.forEach(cert => {
+        const li = document.createElement("li");
+        li.textContent = cert;
+        ul.appendChild(li);
+      });
+
+      card.appendChild(ul);
+      certContainer.appendChild(card);
+    });
+  </script>
+
+
+
+
+
+
+  
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
