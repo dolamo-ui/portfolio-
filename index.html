@@ -126,12 +126,8 @@
     }
   </style>
    <link rel="icon" href="favicon.png" type="image/png">
-
 </head>
 <body>
-
-
-
 
   <!-- Loader -->
   <div class="loader-wrapper">
@@ -145,18 +141,8 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
   <!-- Main content -->
   <div class="main-content">
-
-
     <!-- HEADER -->
     <header class="header">
       <a href="#home" class="logo">
@@ -174,13 +160,14 @@
         <a href="#about"><i class="fas fa-user"></i> About</a>
         <a href="#services"><i class="fas fa-cogs"></i> Services</a>
         <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a>
-        <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="#project"><i class="fas fa-folder-open"></i> Projects</a>
         <a href="#tools-sections"><i class="fas fa-tools"></i> Tech&Tools</a>
         <a href="#Certs+"><i class="fas fa-certificate"></i> Certs+</a>
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
         <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
       </nav>
     </header>
+
 
     <!-- HOME SECTION -->
     <section id="home" class="home">
@@ -205,13 +192,14 @@
             <a href="https://github.com/karabo-dolamo" target="_blank"><i class='bx bxl-github'></i></a>
             <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
             <a href="https://www.instagram.com/karabodolamo target="_blank"><i class='bx bxl-instagram'></i></a>
-
-
           </div>
           <a href="karabo.pdf" class="btn" target="_blank">Download CV</a>
         </div>
       </div>
     </section>
+
+
+
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
@@ -251,6 +239,9 @@
       </div>
     </section>
 
+
+
+
     <!-- SKILLS SECTION -->
     <section id="skills" class="skills">
       <div class="container">
@@ -272,9 +263,10 @@
     
     
     
-    
-   <section id="projects" class="projects">
+
   <div class="container">
+   <section id="project" class="projects">
+
     <h2 class="heading">My <span>Projects</span></h2>
     <div class="projects-grid">
 
@@ -337,16 +329,14 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
     
-  
 
 
-<section id="tools-sections" class="tools-sections">
+  <section id="tools-section"  class="tools-section">
   <h2 class="section-title">Tools & <span>Technologies</span></h2>
 
   <div class="tools-container" id="toolsContainer">
@@ -412,8 +402,10 @@
 
 
 
+
+
   <!-- Licenses & Certifications Section -->
-  <section class="cert-section">
+  <section id="Certs+" class="cert-section">
     <h2 class="section-title">Licenses & <span>Certifications</span></h2>
 
     <div class="container" id="certContainer">
@@ -476,6 +468,18 @@
       certContainer.appendChild(card);
     });
   </script>
+
+
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -556,6 +560,11 @@
   <p>© 2025 Karabo Dolamo - All Rights Reserved</p>
 </footer>
 
+
+
+
+
+
 <script>
   // Optional click animation
   const icons = document.querySelectorAll('.example-2 .icon-content a');
@@ -566,16 +575,6 @@
     });
   });
 </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -606,13 +605,6 @@ menuIcon.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
     // Intersection Observer for navbar active links
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbar a");
@@ -630,6 +622,8 @@ menuIcon.addEventListener('click', () => {
       });
     }, options);
     sections.forEach(section => observer.observe(section));
+
+
 
     // Particle canvas
     const canvas = document.getElementById("particle-canvas");

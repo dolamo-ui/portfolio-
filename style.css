@@ -31,7 +31,6 @@ html {
 
 
 
-
 /* ===========================
    NEON SCROLLBAR
 =========================== */
@@ -62,16 +61,6 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #00eaff rgba(0,0,0,0.2);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -112,20 +101,12 @@ html {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* NAVBAR - Desktop */
 .navbar {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 19px;
+  margin-left: 50px;
 }
 
 .navbar a {
@@ -1002,9 +983,6 @@ h3 {
 
 
 
-
-
-
 /* Section */
 .tools-section {
   padding: 80px 10%;
@@ -1018,7 +996,6 @@ h3 {
 
 .section-title span {
   color: var(--neon);
-  text-shadow: 0 0 5px #00eaff;
 }
 
 /* Grid */
@@ -1083,6 +1060,7 @@ h3 {
   color: var(--neon);
   font-size: 0.8rem;
 }
+
 
 
 
