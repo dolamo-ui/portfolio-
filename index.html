@@ -261,7 +261,7 @@
               <div class="content-box">
                 <h3 class="card-title">Network Security Setup</h3>
                 <p class="card-content">Configured a secure home network using pfSense firewall rules, reducing unauthorized traffic by 70% and implementing IDS alerts with Snort.</p>
-                <span class="see-more">View Project</span>
+                 <a href="https://tryhackme.com/module/network-security" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
@@ -270,8 +270,7 @@
             <div class="card">
               <div class="content-box">
                 <h3 class="card-title">Cybersecurity Lab</h3>
-                <p class="card-content">Built a virtual lab environment for testing vulnerabilities and practicing ethical hacking.</p>
-                <span class="see-more">View Project</span>
+                <a href="https://go.trendmicro.com/getting-started-with-crem/?gad_campaignid=22683501274" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
@@ -281,7 +280,8 @@
               <div class="content-box">
                 <h3 class="card-title">SIEM Implementation</h3>
                 <p class="card-content">Implemented SIEM tools for real-time monitoring and alerting of security events.</p>
-                <span class="see-more">View Project</span>
+   https://go.trendmicro.com/getting-started-with-crem/?gad_campaignid=22683501274
+                   <a href="https://www.sentinelone.com/cybersecurity-101/data-and-ai/siem-deployment/" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
@@ -291,7 +291,7 @@
               <div class="content-box">
                 <h3 class="card-title">Endpoint Security Deployment</h3>
                 <p class="card-content">Deployed endpoint protection software across multiple devices ensuring malware-free operations.</p>
-                <span class="see-more">View Project</span>
+                   <a href="https://learn.microsoft.com/en-us/defender-endpoint/" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
@@ -301,7 +301,7 @@
               <div class="content-box">
                 <h3 class="card-title">Firewall Optimization</h3>
                 <p class="card-content">Optimized firewall rules and configurations to enhance network security and reduce latency.</p>
-                <span class="see-more">View Project</span>
+                <a href="https://www.sophos.com/en-us/products/next-gen-firewall" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
@@ -311,13 +311,15 @@
               <div class="content-box">
                 <h3 class="card-title">Vulnerability Assessment</h3>
                 <p class="card-content">Conducted vulnerability scans and penetration tests to identify and mitigate security risks.</p>
-                <span class="see-more">View Project</span>
+                <a href="https://www.fortinet.com/resources/cyberglossary/vulnerability-assessment" target="_blank" class="see-more">View Project</a>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+
+
 
     <!-- TOOLS & TECHNOLOGIES SECTION -->
     <section id="tools-section" class="tools-section">
@@ -358,6 +360,23 @@
           <div class="form-btn"><button type="submit">Send Message</button></div>
         </form>
       </div>
+
+      <div class="rating-section">
+  <p class="rating-text">⭐ Rate my portfolio out of 10 ⭐</p>
+  <div class="stars" id="starRating">
+    <span data-value="1">★</span>
+    <span data-value="2">★</span>
+    <span data-value="3">★</span>
+    <span data-value="4">★</span>
+    <span data-value="5">★</span>
+    <span data-value="6">★</span>
+    <span data-value="7">★</span>
+    <span data-value="8">★</span>
+    <span data-value="9">★</span>
+    <span data-value="10">★</span>
+  </div>
+  <p id="ratingOutput"></p>
+</div>
     </section>
 
     <!-- SOCIAL MEDIA LINKS -->
@@ -428,6 +447,36 @@
         content.classList.add('show');
       }, loaderDuration);
     });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const skillsSection = document.querySelector(".skills");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add class when visible
+        skillsSection.classList.add("animate");
+      } else {
+        // Remove class when not visible
+        skillsSection.classList.remove("animate");
+      }
+    });
+  }, { threshold: 0.2 }); // triggers when 20% visible
+
+  observer.observe(skillsSection);
+});
+
+
+
+
+
+
+
+
+
+
 
     // Tools & Technologies Data
     const toolsData = [
@@ -614,6 +663,11 @@
       timelineObserver.observe(entry);
     });
 
+
+
+
+
+
     // Particle canvas
     const canvas = document.getElementById("particle-canvas");
     const ctx = canvas.getContext("2d");
@@ -659,6 +713,29 @@
       loop: true
     });
 
+
+   const stars = document.querySelectorAll('#starRating span');
+const output = document.getElementById('ratingOutput');
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const rating = star.getAttribute('data-value');
+
+    // Reset all stars
+    stars.forEach(s => s.classList.remove('active'));
+
+    // Highlight up to clicked star
+    for (let i = 0; i < rating; i++) {
+      stars[i].classList.add('active');
+    }
+
+    // Show rating text
+    output.textContent = `You rated: ${rating}/10`;
+  });
+});
+
+
+   
     // Social media icon click animation
     const icons = document.querySelectorAll('.example-2 .icon-content a');
     icons.forEach(icon => {
@@ -667,6 +744,9 @@
         setTimeout(() => icon.classList.remove('clicked'), 300);
       });
     });
+
+
+
   </script>
 
 </body>
